@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+        </style>
+        <script>
+            function add() {
+                var value1 = document.getElementById("value1").value;
+                var value2 = document.getElementById("value2").value;
+                var add = document.getElementById("add").value;
+                var result = document.getElementById("sum");            
+                
+            if(add == "+") {
+                sum = Number(value1) + Number(value2);
+            } else if (add == "-") {
+                sum = Number(value1) - Number(value2);
+            } else if (add == "*") {
+                sum = Number(value1) * Number(value2);
+            } else if (add == "/") {
+                sum = Number(value1) / Number(value2);
+            }
+            result.value = sum;
+            }
+
+            function reset() {
+                document.getElementById("value1").value = "";
+                document.getElementById("value2").value = "";
+                document.getElementById("add").value = "";
+                document.getElementById("sum").value = "";
+            }
+        </script>
+    </head>
+
+    <body>
+        <p>값1: <input type="text" id="value1"></p>
+        <p>값2: <input type="text" id="value2" ></p>     
+        <p>연산자: <input type="text" id="add"></p>
+        <p>결과: <input type="text" id="sum"></p>
+
+        <button type = "button" onclick="add()">계산하기</button>
+        <button type = "button" onclick="reset()">초기화</button>
+    </body>
+</html>
