@@ -1,121 +1,123 @@
 <html>
-
-<head>
-    <title>달력</title>
-
-    <script>
-        function writeNode() {
-            var date = document.getElementById("date").value;
-            var content = document.getElementById("content").value;
-
-            var table = document.getElementById("table");
-            var garo = document.createElement("tr");
-
-            var kan1 = document.createElement("td");
-            kan1.innerText = name;
-            var kan2 = document.createElement("td");
-            kan2.innerText = content;
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js" ></script>
+​
+        <title> 내 스케줄 </title>
+​
+        <style>
+            td {
+                width: 100px;
+                height: 100px;
+            }
+            tr > td:first-child > p,
+            tr > th:first-child > p {
+                color: red
+            }
+            tr > td:last-child > p,
+            tr > th:last-child > p {
+                color: blue;
+            }
+            td > p:hover {
+                transform: scale(1.2);
+                cursor:pointer;
+            }
+        </style>
+    </head>
+​
+    <body > 
+        <div>
+            날짜 : <input type="text" id="date" readonly> <br>
+            내용 : <input type="text" id="content"> <br>
+            <button type="button" onclick="writeSchedule();">작성</button> <br>
+        </div> 
+        <div style="font-size:2em; color:green; text-align:center;">
+            2022년 7월        
+        </div> 
+​
+        <br>
+        
+        <table align="center" width=500 style="text-align:center;">
+            <tr>
+                <th>日</th>
+                <th>月</th>
+                <th>火</th>
+                <th>水</th>
+                <th>木</th>
+                <th>金</th>
+                <th>土</th>
+            </tr>
+            <tr>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p>1</p></td>
+                <td><p>2</p></td>
+            <tr>
+                <td><p>3</p></td>
+                <td><p>4</p></td>
+                <td><p>5</p></td>
+                <td><p>6</p></td>
+                <td><p>7</p></td>
+                <td><p>8</p></td>
+                <td><p>9</p></td>
+            </tr>
+            <tr>
+                <td><p>10</p></td>
+                <td><p>11</p></td>
+                <td><p>12</p></td>
+                <td><p>13</p></td>
+                <td><p>14</p></td>
+                <td><p>15</p></td>
+                <td><p>16</p></td>
+            </tr>
+            <tr>
+                <td><p>17</p></td>
+                <td><p>18</p></td>
+                <td><p>19</p></td>
+                <td><p>20</p></td>
+                <td><p>21</p></td>
+                <td><p>22</p></td>
+                <td><p>23</p></td>
+            </tr>
+            <tr>
+                <td><p>24</p></td>
+                <td><p>25</p></td>
+                <td><p>26</p></td>
+                <td><p>27</p></td>
+                <td><p>28</p></td>
+                <td><p>29</p></td>
+                <td><p>30</p></td>
+            </tr>
+            <tr>
+                <td><p>31</p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+            </tr>
+        </table>
+​
+        <script>
+            var target;
             
-            garo.appendChild(kan1);
-            garo.appendChild(kan2);
-            table.appendChild(garo);
-
-        }
-    </script>
-
-</head>
-
-<body>
-
-    <table class="tb1">
-        <tr>
-            <th>날짜 :</th>
-            <td>
-                <input type="text" id="date" style="width: 300px;">
-            </td>
-        </tr>
-        <tr>
-            <th>내용 :</th>
-            <td>
-                <input type="text" id="content" style="width: 300px;">
-            </td>
-        </tr>
-    </table>
-    
-    <br>
-    <button type="button" onclick="writeNode();">작성</button>
-
-    <br><br>
-
-    <div style="font-size: 2em; color: green; text-align:center;">
-        2022년 7월
-    </div>
-
-    <table align="center" cellpadding=20 width=500 style="text-align:center;">
-        <tr>
-            <td style="color: red;">日</td>
-            <td>月</td>
-            <td>火</td>
-            <td>水</td>
-            <td>木</td>
-            <td>金</td>
-            <td style="color: blue;">土</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>1</td>
-            <td style="color: blue;">2</td>
-        </tr>
-        <tr>
-            <td style="color: red;">3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td style="color: blue;">9</td>
-        </tr>
-        <tr>
-            <td style="color: red;">10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td style="color: blue;">16</td>
-        </tr>
-        <tr>
-            <td style="color: red;">17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
-            <td style="color: blue;">23</td>
-        </tr>
-        <tr>
-            <td style="color: red;">24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
-            <td style="color: blue;">30</td>
-        </tr>
-        <tr>
-            <td style="color: red;">31</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-</body>
-
+            $("td").on("click", function( obj ){
+                console.log(obj);
+                target = obj.currentTarget; // 현재 선택한 태그 target 변수에 담기 지금, td가 console.log로 나온다.
+                console.log( target );
+                $("#date").val($(obj.currentTarget).text());
+                // alert( $(obj.currentTarget).text() );
+            });
+​
+            function writeSchedule(){
+                var content = $("#content").val();
+                
+                $(target).append("<p>" + content + "</p>");
+            }
+        </script>
+    </body>
 </html>
