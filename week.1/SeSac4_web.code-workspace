@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "SeSac4_web",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "SeSac4_web"
+	}
+}

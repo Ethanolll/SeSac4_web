@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>실습 19</title>
+    <style>
+      body {
+        padding: 0px;
+        margin: 0px;
+        background-color: black;
+        color: #ffffff;
+      }
+      .jb-box {
+        width: 100%;
+        height: 800px;
+        overflow: hidden;
+        margin: 0px auto;
+        position: relative;
+        font-family: "Permanent Marker", cursive;
+      }
+      .jb-box2 {
+        width: 100%;
+        height: 800px;
+        overflow: hidden;
+        margin: 0px auto;
+        position: relative;
+        background: url(neon.jpeg) fixed;
+      }
+      .photo {
+        position: absolute;
+        top: 100px;
+        right: 200px;
+      } 
+      .jb-box2 h1 {
+        font-family: "Permanent Marker", cursive;
+        font-size: 4em;
+        width: 258px;
+        position: absolute;
+        top: 155px;
+        left: 150px;
+        animation: slide 2s ease-in-out;
+      }
+      @keyframes slide {
+        from {
+            left: -200px;
+            opacity: 0;
+        }
+        to {
+            left: 150px;
+            opacity: 1;
+        }
+      }
+      @keyframes disppear {
+        from {
+            left: 150px;
+            opacity: 1;
+        }
+        to {
+            left: -200px;
+            opacity: 0;
+        }
+      }
+
+        .jb-box3 {
+        width: 100%;
+        height: 800px;
+        overflow: hidden;
+        margin: 0px auto;
+        position: relative;
+        font-family: "Permanent Marker", cursive;
+        background: url(neon2.jpeg) fixed;
+      }
+        .jb-box3 h1 {
+        font-family: "Permanent Marker", cursive;
+        font-size: 4em;
+        width: 258px;
+        position: absolute;
+        top: 155px;
+        left: 150px;
+        animation: slide 4s ease-in-out;
+      }
+
+        .jb-box4 {
+        width: 100%;
+        height: 800px;
+        overflow: hidden;
+        margin: 0px auto;
+        position: relative;
+        font-family: "Permanent Marker", cursive;
+        background-color: aqua;
+      }
+      video {
+        width: 100%;
+      }
+      .jb-text {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+      }
+      .jb-text h1{
+        text-align: center;
+        font-size: 7em;
+      }
+
+      .container {
+        font-family: "Permanent Marker", cursive;
+        color: #ffffff;
+        padding-top: 10px;
+      }
+
+      .container1 {
+        font-family: 'Gugi', cursive;
+        padding-left: 50px;
+        position: absolute;
+        top: 300px;
+        left: 60px;
+      }
+
+      .card-body h5 {
+        color: black;
+      }
+
+    .scroll1 h4{
+        text-align: center;
+        margin: 100px;
+        font-family: "Permanent Marker", cursive;
+      }
+
+      /* .scrollspyHeading1 {
+        text-align: center;
+      } */
+
+      .card-text {
+        color: black;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div>
+      <div class="jb-box">
+        <video muted autoplay loop>
+          <source src="night.mp4" type="video/mp4" />
+          <strong>Your browser does not support the video tag.</strong>
+        </video>
+        <div class="jb-text">
+          <h1>PICK YOUR FAVORITE</h1>
+        </div>
+      </div>
+      <!-- ---------------------------------------------------------- -->
+      <div class="jb-box2">
+        <h1>FRUITS</h1>
+        <div>
+            <div class="container1">
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img height="200px" src="berry.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img height="200px" src="orange.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img height="200px" src="water.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div  class="card" style="width: 18rem;">
+                            <img height="200px" src="apple.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- ---------------------------------------------------------- -->
+    <div class="jb-box3">
+        <h1>ANNIVERSARY</h1>
+        <div>
+            <div class="container1">
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img height="200px" src="bd.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img height="200px" src="christ.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img height="200px" src="ny.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img height="200px" src="hal.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+     
+     
+     <!-- ---------------------------------------------------------- -->
+      <!-- ---------------------------------------------------------- -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+let mainText = document.querySelector("div jb-box2:first-child h1");
+let mainText2 = document.querySelector("div jb-box3:first-child h1");
+
+window.addEventListener("scroll", function () {
+  let value = window.scrollY;
+  console.log("scrollY", value);
+
+  if (value > 1000) {
+    mainText.style.animation = "disappear 5s ease-out forwards";
+  } else {
+    mainText.style.animation = "slide 5s ease-out";
+  }
+});
+
+    </script>
+  </body>
+</html>
