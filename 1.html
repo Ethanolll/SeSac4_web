@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script>
+      var cnt = 1;
+      function writeNode() {
+        var name = document.getElementById("name").value;
+        var content = document.getElementById("content").value;
+
+        var table = document.getElementById("table");
+        var garo = document.createElement("tr");
+
+        var kan1 = document.createElement("td");
+        kan1.innerText = cnt;
+        cnt = cnt + 1;
+        // kan1.innerText = document.querySelectorAll("#table tr").length;
+        var kan2 = document.createElement("td");
+        kan2.innerText = name;
+        var kan3 = document.createElement("td");
+        kan3.innerText = content;
+
+        var kan4 = document.createElement("td");
+
+        var kan5 = document.createElement("td");
+
+        var date = new Date();
+        console.log(date);
+
+        garo.appendChild(kan1);
+        garo.appendChild(kan2);
+        garo.appendChild(kan3);
+        garo.appendChild(kan4);
+        garo.appendChild(kan5);
+        table.appendChild(garo);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+    <fieldset>
+      <legend>방명록 등록</legend>
+              <input type="text" id="name" placeholder="사용자 이름"/>
+              <br>
+              <input type="text" id="content" placeholder="방명록"/>
+              <br>
+              <button type="button" onclick="writeNode();">등록</button>
+    </fieldset>        
+    <br /><br />
+        <table id="table" border="1" cellpadding="10" cellspacing="0">
+          <tr>
+            <th>ID</th>
+            <th>작성자</th>
+            <th>방명록</th>
+            <th>수정</th>
+            <th>삭제</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
