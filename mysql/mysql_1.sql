@@ -2,16 +2,19 @@ CREATE DATABASE sesac;
 
 USE sesac;
 
-CREATE TABLE user (
-	id VARCHAR(10) not null primary key,
-	pw VARCHAR(20) not null,
-    name VARCHAR(5) not null,
-    gender ENUM('F', 'M', '') default '',
-    birthday DATE not null,
-    age int(3) not null default 0
+CREATE TABLE user(
+	id  int not null primary key auto_increment,
+    name VARCHAR(10) not null,
+    comment mediumtext null
 );
 
-DESC user;
+DESC visitor;
+
+INSERT INTO visitor(id, name, comment) VALUES ('1', '홍길동', '내가 왔다!');
+
+SELECT * FROM visitor;
+
+select user from mysql.user;
 
 INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('hong1234', '8o4bkg', '홍길동', 'M', '1990-01-31', '33');
 INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('sexysung', '87awjkdf', '성춘향', 'F', '1992-03-31', '31');

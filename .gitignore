@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 abcd.txt
 node_modules/
 package.json
 package-lock.json
 **/.DS_store
+=======
+**/node_modules
+**/package-lock.json
+>>>>>>> 49d1031e47a510c3208bfa7a9db96019b2b11193
