@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+        <style>
+            .chat-list {background-color: skyblue; width: 50%; height: 100%; padding: 10px;}
+
+            .chat-list div div { display: inline-block; padding: 3px; margin-bottom: 10px;}
+            .my-chat {text-align: right;}
+            .my-chat div{background-color: yellow;}
+            .other-chat {background-color: white;}
+        </style>
+    </head>
+    <body>
+        <h1>Hello Socket!</h1>
+        <div id="chat-list" class="chat-list"></div>
+        <input type="text" id="message">
+        <button type="button" onclick="send();">전송</button>
+        <script>
+            var id = "";
+            var socket = io.connect();
+            socket.on("info", function(data){console.log(data); id = data});
+
+            function send() {
+                console.log(id);
+                let msg = document.getElementById("message").value;
+                socket.emit("send", {id: id, msg: msg});
+                document.getElementById("message").value = "";
+            }
+            socket.on("newMessage", function(data){
+                let chat_list = document.getElementById("chat-list");
+                let div = document.createElement("div"); 
+                let div_chat = document.createElement("div"); 
+
+                div_chat.textContent = data.msg; 
+
+                if ( data.id == id ) {
+                    div.classList.add("my-chat");
+                } else {
+                    div_chat.classList.add("other-chat");
+                }
+
+                div.appendChild(div_chat);
+                chat_list.appendChild(div);
+            });
+            socket.on("notice", function(data){
+                let chat_list = document.getElementById("chat-list");
+                let div = document.createElement("div"); 
+                div.textContent = data + "님이 입장하셨습니다.";
+
+                chat_list.appendChild(div);
+            });
+        </script>
+    </body>
+</html>
