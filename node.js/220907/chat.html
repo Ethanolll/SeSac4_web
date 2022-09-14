@@ -2,52 +2,107 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
         <style>
-            .chat-list {background-color: skyblue; width: 50%; height: 100%; padding: 10px;}
-
-            .chat-list div div { display: inline-block; padding: 3px; margin-bottom: 10px;}
+            .chat-list {background-color: skyblue; width: 50%; min-height: 50%; max-height: 100%; padding: 10px; margin: 0 atuo;}
+            /* .chat-list div:not(.my-chat .other-chat) { text-align: center; } */
+            .chat-list div div { display: inline-block; padding: 3px;}
             .my-chat {text-align: right;}
-            .my-chat div{background-color: yellow;}
-            .other-chat {background-color: white;}
+            .my-chat div{background-color: yellow; margin-bottom: 10px; margin-left: 10px;}
+            .other-chat div{background-color: white; margin-bottom: 10px; margin-left: 10px;}
+
+            .access {background-color: white; width: 90%; margin: 0 auto; margin-bottom: 10px; border-radius: 10px; text-align: center;}
+
         </style>
     </head>
     <body>
         <h1>Hello Socket!</h1>
         <div id="chat-list" class="chat-list"></div>
+        <select id="nick-list">
+            <option value="전체">전체</option>
+        </select>
         <input type="text" id="message">
         <button type="button" onclick="send();">전송</button>
         <script>
-            var id = "";
+            // document.addEventListener('scroll', function() {
+            //     var currentScrollValue = document.documentElement.scrollTop;
+            //     console.log('currentScrollValue is ' + currentScrollValue);
+            // });
+
+            var nickname = prompt("닉네임을 입력해주세요.");
             var socket = io.connect();
-            socket.on("info", function(data){console.log(data); id = data});
+            socket.emit("info2", {nickname: nickname});
+            // socket.on("info", function(data){console.log(data); id = data});
 
             function send() {
-                console.log(id);
                 let msg = document.getElementById("message").value;
-                socket.emit("send", {id: id, msg: msg});
+                let nick = document.getElementById("nick-list").value;
+                // socket.emit("send", {id, msg});
+                socket.emit("send", {msg: msg, to: nick});
                 document.getElementById("message").value = "";
             }
             socket.on("newMessage", function(data){
+                // data = {id: ~~~, msg: ~~}
                 let chat_list = document.getElementById("chat-list");
-                let div = document.createElement("div"); 
-                let div_chat = document.createElement("div"); 
+                let div = document.createElement("div"); // <div></div>
+                let div_chat = document.createElement("div"); // <div></div>
+                let span = document.createElement("span");
+                //<div></div>
 
-                div_chat.textContent = data.msg; 
+                div_chat.textContent = data.msg; // <div>{msg}</div>
 
-                if ( data.id == id ) {
+                if ( data.is_dm ) div_chat.textContent = "(DM)" + div_chat.textContent; // CSS 넣어야됨
+                if ( data.nickname == nickname ) {
                     div.classList.add("my-chat");
                 } else {
-                    div_chat.classList.add("other-chat");
+                    span.textContent = data.nickname;
+                    div.appendChild(span);
+                    div.classList.add("other-chat");
                 }
+                //<div class="my-chat"></div>
+
+                // div => <div class="my=chat"></div>
+                // div_chat => <div>{msg}</div>
 
                 div.appendChild(div_chat);
+                // <div class="my=chat">
+                    // <div>{msg}</div>
+                // </div>
                 chat_list.appendChild(div);
             });
             socket.on("notice", function(data){
                 let chat_list = document.getElementById("chat-list");
-                let div = document.createElement("div"); 
-                div.textContent = data + "님이 입장하셨습니다.";
+                let div = document.createElement("div"); // <div></div>
+                div.textContent = data;
+                div.classList.add("access");
 
                 chat_list.appendChild(div);
+            });
+            socket.on("list", function(list){
+                // list = {id~~:nickname, id~~~~~: nickname};
+                let nick_list = document.getElementById("nick-list");
+                while(nick_list.firstChild){
+                    nick_list.removeChild(nick_list.lastChild);
+                }
+                let option = document.createElement("option");
+                option.text = "전체";
+                option.value = "전체";
+                nick_list.appendChild(option);
+
+                var a = {
+                    key1: "1",
+                    key2: "2",
+                    key3: "3"
+                };
+                for (let [key, value] of Object.entries(a)){
+                    // key = "key1", value = "1";
+                    // key = "key2", value = "2";
+                }
+
+                for (let [key, value] of Object.entries(list)){
+                    let option = document.createElement("option");
+                    option.text = value;
+                    option.value = value;
+                    nick_list.appendChild(option);                        
+                }
             });
         </script>
     </body>
