@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <title>Chat</title>
-    <link rel="stylesheet" href="chat.css">
-    <script src="chat.js"></script>
+    <link rel="stylesheet" href="/chat.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="main">
@@ -12,27 +14,73 @@
         </div>
         <div class="aside">
             <div id="convo" data-from="Sonu Joshi">
-                <ul class="chat-thread">
-                  <li>방가방가</li>
-                  <li>가방가방</li>
-                  <li>방가방가</li>
-                    <li>가방가방</li>
-                  <li>방가방가</li>
-                  <li>가방가방</li>
-                    <li>방가방가</li>
-                  <li>가방가방</li>
-                  <li>방가방가</li>
-                    <li>가방가방</li>
-                  <li>방가방가</li>
-                  <li>가방가방</li>
+                <ul class="chat-list" id="chat-list">
+                  <!-- <li class="access"></li> -->
+                  <!-- <li class="myChat">chat</li> -->
+                  <!-- <li class="otherChat">other</li> -->
                 </ul>
                 </div>
                 <!-- <div class="credits"><a href="https://codepen.io/clintioo/pen/HAkjq">Original Pen</a> by <a href="https://codepen.io/clintioo/pen/HAkjq">clintioo</a></div> -->
         </div>
         <div class="message-box">
-            <input type="text" class="message-input" placeholder="Type message..."></input>
-            <button type="submit" class="message-submit">보내기</button>
+            <input type="text" id="message" class="message-input" placeholder="Type message..."></input>
+            <button type="button" onclick="send();" class="message-submit">보내기</button>
         </div>
     </div>
+
+    <script>
+      // document.addEventListener('scroll', function() {
+      //     var currentScrollValue = document.documentElement.scrollTop;
+      //     console.log('currentScrollValue is ' + currentScrollValue);
+      // });
+
+      var nickname = prompt("닉네임을 입력해주세요.");
+      var socket = io.connect();
+      socket.emit("info2", {nickname: nickname});
+      // socket.on("info", function(data){console.log(data); id = data});
+
+      function send() {
+          let msg = document.getElementById("message").value;
+          // socket.emit("send", {id, msg});
+          socket.emit("send", {msg: msg, to: '전체'});
+          document.getElementById("message").value = "";
+      }
+      socket.on("newMessage", function(data){
+          // data = {id: ~~~, msg: ~~}
+          let chat_list = document.getElementById("chat-list");
+          let li = document.createElement("li"); // <div></div>
+          //<div></div>
+
+          li.textContent = data.msg; // <div>{msg}</div>
+
+          if ( data.is_dm ) li.textContent = "(DM)" + li.textContent; // CSS 넣어야됨
+          if ( data.nickname == nickname ) {
+            li.classList.add("myChat");
+          } else {
+              li.classList.add("otherChat");
+          }
+          //<div class="my-chat"></div>
+
+          // div => <div class="my=chat"></div>
+          // div_chat => <div>{msg}</div>
+          // <div class="my=chat">
+              // <div>{msg}</div>
+          // </div>
+          chat_list.appendChild(li);
+
+          // $('#chat-list').scrollTop($('#chat-list')[0].scrollHeight);
+      });
+      socket.on("notice", function(data){
+          let chat_list = document.getElementById("chat-list");
+          console.log( chat_list );
+          let li = document.createElement("li"); // <div></div>
+          li.textContent = data;
+          li.classList.add("access");
+
+          chat_list.appendChild(li);
+      });
+      socket.on("list", function(list){
+      });
+  </script>
 </body>
 </html>
