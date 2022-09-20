@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css" />
+
+    <style>
+      .media {
+        width: 50vw;
+        height: 50vw;
+        background-color: aqua;
+      }
+
+      .media h2 {
+        text-align: center;
+      }
+
+      @media screen and (min-width: 768px) {
+        .media {
+          border-radius: 50%;
+          background-color: plum;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        .media {
+          border-radius: 0%;
+          background-color: coral;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="media"></div>
+    <div class="media2"></div>
+  </body>
+</html>

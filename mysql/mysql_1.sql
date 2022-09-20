@@ -4,8 +4,8 @@ USE sesac;
 
 CREATE TABLE user(
 	id  int not null primary key auto_increment,
-    name VARCHAR(10) not null,
-    comment mediumtext null
+    pw VARCHAR(20) not null,
+    name VARCHAR(10) not null
 );
 
 DESC visitor;
