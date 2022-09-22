@@ -3,6 +3,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import image from "/Users/nature/Desktop/SeSac4_web/react/220922/src/image.jpg";
 
+// import React from "react";
+// import "./PropsTest2.css";
+// import book from "/Users/nature/Desktop/SeSac4_web/react/220922/src/image.jpg";
+
 class PropsTest2 extends Component {
   render() {
     return (
@@ -32,7 +36,21 @@ class PropsTest2 extends Component {
   };
 }
 
+// const PropsTest2 = ({ title, author, price, type }) => {
+//   return (
+//     <div className="all">
+//       <div className="best">이번주 베스트셀러</div>
+//       <img src={book} className="book_img"></img>
+//       <div className="title">{title}</div>
+//       <div className="content">저자 : {author}</div>
+//       <div className="content">판매가 : {price}</div>
+//       <div className="content">구분 : {type}</div>
+//     </div>
+//   );
+// };
+
 PropsTest2.defaultProps = {
+  title: "기본제목",
   author: "기본값",
   money: "기본가격",
   type: "기본구분",

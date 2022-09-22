@@ -1,5 +1,6 @@
 .rainbow {
   display: flex;
+  /* display: inline-flex; */
 }
 .red {
   background-color: red;

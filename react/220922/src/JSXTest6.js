@@ -1,9 +1,10 @@
+import React from "react";
 import "./JSXTest6.css";
 
 function ReactTest6() {
   return (
     <div>
-      {<h1>Test6</h1>}
+      <h1>Test6</h1>
       <div className="rainbow">
         <div className="red"></div>
         <div className="orange"></div>

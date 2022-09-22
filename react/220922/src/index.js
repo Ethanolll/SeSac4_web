@@ -23,14 +23,24 @@ root.render(
     <JSXTest4 />
     <JSXTest5 />
     <JSXTest6 />
-    <ComponentTest1 name="박자연" />
+    {/* <ComponentTest1 name="박자연" /> */}
+    <ComponentTest1 />
     <ComponentTest2 />
     <PropsTest1 food="아귀찜" />
-    <PropsTest2 author="김유진" money="13,500" type="자기계발서" />
+    <PropsTest2
+      title="나의 하루는 4시 40분에 시작된다"
+      author="김유진"
+      price="13,500"
+      type="자기계발서"
+    />
     <PropsTest3
       text="App 컴포넌트에서 넘겨준 text props입니다."
       valid="콘솔 띄우기 성공!"
     />
+    {/* <PropsTest3
+      text="App 컴포넌트에서 넘겨준 text props입니다."
+      valid={my_func}
+    /> */}
     {/* <ClassComponent name= {1} location="문래">문자</ClassComponent> */}
     {/* <App /> */}
   </>

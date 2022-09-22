@@ -1,6 +1,8 @@
 import "./PropsTest1.css";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+// import React from "react";
+
 class PropsTest1 extends Component {
   render() {
     return (
@@ -21,6 +23,16 @@ class PropsTest1 extends Component {
     name: PropTypes.string,
   };
 }
+
+// const PropsTest1 = (props) => {
+//   return (
+//     <h1>
+//       제가 좋아하는 음식은
+//       <span style={{ color: "red" }}> {props.food}</span>
+//       입니다.
+//     </h1>
+//   );
+// };
 
 PropsTest1.defaultProps = {
   food2: "기본값",
