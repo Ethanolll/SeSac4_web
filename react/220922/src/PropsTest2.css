@@ -1,0 +1,31 @@
+.main {
+  background-color: antiquewhite;
+  width: 450px;
+  height: 500px;
+}
+
+.book {
+  text-align: center;
+}
+
+.book h1 {
+  padding-top: 30px;
+  color: orange;
+}
+
+.book h2 {
+  font-size: 28px;
+}
+
+.book img {
+  width: 100px;
+  height: 200px;
+}
+
+.book2 {
+  margin-left: 35px;
+}
+
+.book2 h3 {
+  margin: 5px;
+}
