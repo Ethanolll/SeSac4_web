@@ -4,6 +4,9 @@ import StateClass from './StateClass';
 import StateFunction from './StateFunction';
 import StateClassTest from './StateClassTest';
 import StateFunctionTest from './StateFunctionTest';
+import Event from './Event';
+import EventClass from './EventClass';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +15,8 @@ root.render(
     <StateFunction/>
     <StateClassTest/>
     <StateFunctionTest/>
+    <Event/>
+    <EventClass/>
   </React.StrictMode>
 );
 
