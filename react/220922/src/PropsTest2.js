@@ -1,7 +1,7 @@
 import "./PropsTest2.css";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import image from "/Users/nature/Desktop/SeSac4_web/react/220922/src/image.jpg";
+import image from "./image.jpg";
 
 // import React from "react";
 // import "./PropsTest2.css";

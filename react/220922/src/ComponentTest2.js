@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ComponentTest2.css";
-import image from "/Users/nature/Desktop/SeSac4_web/react/220922/src/image.jpg";
+import image from './image.jpg';
 
 class ComponentTest2 extends Component {
   render() {
