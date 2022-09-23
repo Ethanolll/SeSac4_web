@@ -6,7 +6,7 @@ import StateClassTest from './StateClassTest';
 import StateFunctionTest from './StateFunctionTest';
 import Event from './Event';
 import EventClass from './EventClass';
-
+import EventTest1 from './EventTest1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +17,7 @@ root.render(
     <StateFunctionTest/>
     <Event/>
     <EventClass/>
+    <EventTest1/>
   </React.StrictMode>
 );
 
