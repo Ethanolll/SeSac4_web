@@ -1,6 +1,15 @@
 function Event() {
     function clickEvent(e) {
         console.log(e);
+
+        let list = ['a', 'b', 'c'];
+        let newList = list.map((value, index, arr) => {
+            console.log(value);
+            console.log(index);
+            console.log(arr);
+            return value + index;
+        });
+        console.log(newList);
     }
     function aClick(e) {
         e.preventDefault(); // window의 기본 동작을 막는 친구
