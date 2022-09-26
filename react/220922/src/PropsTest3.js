@@ -9,8 +9,6 @@ class PropsTest3 extends Component {
         <h1>Props Test3</h1>
         <h1>{this.props.text}</h1>
         <button onClick={console.log(this.props.valid)}>콘솔 메세지</button>
-        <h1>{this.props.text2}</h1>
-        <button onClick={console.log(this.props.valid2)}>콘솔 메세지</button>
       </div>
     );
   }
