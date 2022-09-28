@@ -4,8 +4,10 @@ import ReactDOM from "react-dom/client";
 // import Test62 from './Test62';
 // import Ref from './Ref';
 // import Test63 from "./Test63";
-import ValidationApp from "./RefStudy/ValidationApp";
+// import ValidationApp from "./RefStudy/ValidationApp";
 // import LifeCycle from "./LifeCycle";
+// import LifeCycle from "./LifeCycleStudy/LifeCycleApp";
+import LifeCycleApp from "./LifeCycleStudy/LifeCycleApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +17,8 @@ root.render(
     <Ref />
     <Ref /> */}
     {/* <Test63 /> */}
-    <ValidationApp />
+    {/* <ValidationApp /> */}
     {/* <LifeCycle /> */}
+    <LifeCycleApp />
   </React.StrictMode>
 );
