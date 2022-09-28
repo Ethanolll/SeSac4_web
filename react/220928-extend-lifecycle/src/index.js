@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 // import Test62 from './Test62';
 // import Ref from './Ref';
 // import Test63 from "./Test63";
-import ValidationApp from "./study/ValidationApp";
+import ValidationApp from "./RefStudy/ValidationApp";
 // import LifeCycle from "./LifeCycle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
