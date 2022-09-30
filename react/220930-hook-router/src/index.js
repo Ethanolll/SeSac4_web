@@ -9,7 +9,9 @@ import Origin from './6Origin';
 import UseSass from './7UseSass';
 import CSSModule from './8CSSModule';
 import StyledComponents from './9StyledComponent';
-import Test65 from './Test65';
+// import Test65 from './Test65';
+import Test66 from './Test66';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,6 +34,8 @@ root.render(
     <hr/>
     <StyledComponents/>
     <hr/>
-    <Test65/>
+    {/* <Test65/> */}
+    {/* <hr/> */}
+    <Test66/>
   </React.StrictMode>
 );
