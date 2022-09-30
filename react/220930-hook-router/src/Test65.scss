@@ -1,0 +1,66 @@
+@import '~include-media/dist/include-media';
+@import '~open-color/open-color';
+
+.Larva {
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+    position: absolute;
+
+    .body1 {
+        background-color: #1E90FF;
+        z-index: 1;
+    }
+
+    .body2 {
+        background-color: #0064FF;
+        top: 40px;
+        left: 60px;
+        z-index: 2;   
+    }
+
+    .body3 {
+        background-color: #00008C;
+        top: 80px;
+        left: 100px;
+        z-index: 3;
+    }
+    .body4 {
+        background-color: #93DAFF;
+        top: 80px;
+        left: 150px;
+        z-index: 4;     
+    }
+    .body5 {
+        background-color: #008080;
+        top: 80px;
+        left: 200px;
+        z-index: 5;
+    }
+    .eye1 {
+        width: 35px;
+        height: 35px;
+        background-color: white;
+        top: 15px;
+        left: 20px;
+        z-index: 2;
+    }
+    .eye2 {
+        width: 15px;
+        height: 15px;
+        background-color: black;
+        top: 20px;
+        left: 20px;
+        z-index: 3;
+    }
+    .img1 {
+        position: absolute;
+        top: 80px;
+        left: 0px;
+        z-index: 4;
+        img {
+            width: 300px;
+            height: 100px;
+        }
+    }
+}
