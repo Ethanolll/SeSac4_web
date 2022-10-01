@@ -1,17 +1,11 @@
-import Component from "./Component";
-import Component2 from "./Component2";
-import Component3 from "./Component3";
-import Component4 from "./Component4";
+import Component from "./Component/Component";
+import ComponentTest from "./Component_Test/ComponentTest";
 
 function App() {
   return (
     <div>
       <Component />
-      <Component2 />
-      <Component2 />
-      <Component2 />
-      <Component3 />
-      <Component4 />
+      <ComponentTest />
     </div>
   );
 }
