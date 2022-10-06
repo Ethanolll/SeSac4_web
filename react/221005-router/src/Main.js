@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 function Main() {
-  // 이 코드는 product.js 3번째 ul과 연결되어 았음
   const location = useLocation();
   return (
     <div>
