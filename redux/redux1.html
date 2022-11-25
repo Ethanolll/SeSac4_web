@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    <title>Document</title>
+    <style>
+        #redBox {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            justify-content: center;
+            align-items: center;
+        }
+        #greenBox {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            justify-content: center;
+            align-items: center;
+        }
+        #yellowBox {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="redBox">
+        <h1>red</h1>
+        <button type="button" onclick="store.dispatch({type:'CHANGE', color: 'red'});">red</button>
+    </div>
+    <div id="greenBox">
+        <h1>green</h1>
+        <button type="button" onclick="store.dispatch({type:'CHANGE', color: 'green'});">green</button>
+    </div>
+    <div id="yellowBox">
+        <h1>yellow</h1>
+        <button type="button" onclick="store.dispatch({type:'CHANGE', color: 'yellow'});">yellow</button>
+    </div>
+    
+    <script>
+        function reducer(state, action){
+            // state: 현태 상태 -> 변경되기 전,
+            // action : dispatch를 호출할 때 넣었던 객체 
+            // return {color: 'red'};
+            if (action.type === 'CHANGE'){
+                return {color: action.color};
+            }
+        }
+        var store = Redux.createStore(reducer);
+        // function Red() {
+        //     document.querySelector('#redBox').style.backgroundColor = 'red';
+        //     document.querySelector('#greenBox').style.backgroundColor = 'red';
+        //     document.querySelector('#yellowBox').style.backgroundColor = 'red';
+        // }
+        // function Green(){
+        //     document.querySelector('#redBox').style.backgroundColor = 'green';
+        //     document.querySelector('#greenBox').style.backgroundColor = 'green';
+        //     document.querySelector('#yellowBox').style.backgroundColor = 'green';
+        // }
+        // function Yellow(){
+        //     document.querySelector('#redBox').style.backgroundColor = 'yellow';
+        //     document.querySelector('#greenBox').style.backgroundColor = 'yellow';
+        //     document.querySelector('#yellowBox').style.backgroundColor = 'yellow';
+        // }
+        function changeAll(){
+            var state = store.getState();
+            document.querySelector('#redBox').style.backgroundColor = state.color;
+            document.querySelector('#greenBox').style.backgroundColor = state.color;
+            document.querySelector('#yellowBox').style.backgroundColor = state.color;
+        }
+        store.subscribe(changeAll);
+    </script>
+</body>
+</html>
